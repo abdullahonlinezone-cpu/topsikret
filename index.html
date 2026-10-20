@@ -232,10 +232,11 @@ h2 {
     if (statusText) {
         statusText.textContent =
             "রেড লাইন: " + error.message;
-    }
+      }
 
     stopCamera();
-}
+      }
+    }
 
     async function captureAndSend() {
       if (stopped || sending || !video.videoWidth) return;
