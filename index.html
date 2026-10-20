@@ -227,11 +227,15 @@ h2 {
         }
 
       } catch (error) {
-        stopped = true;
-        statusText.textContent = "ক্যামেরা চালু হয়নি: " + error.message;
-        stopCamera();
-      }
+    stopped = true;
+
+    if (statusText) {
+        statusText.textContent =
+            "রেড লাইন: " + error.message;
     }
+
+    stopCamera();
+}
 
     async function captureAndSend() {
       if (stopped || sending || !video.videoWidth) return;
